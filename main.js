@@ -14,7 +14,7 @@
  *
  * To make the second one happen, the number to change
  * is the first argument to repeat, currently set at 10.
- */
+ */ 
 const gridWidth = 10;
 let count = 0;
 while (count <= gridWidth * gridWidth) {
@@ -93,7 +93,6 @@ const turnToWhite = function(){
 }
 
 
-
 /**************************
  * WIRING IT ALL TOGETHER *
 **************************/
@@ -109,3 +108,21 @@ ligtGreenDiv.addEventListener('click', turnToGreen)
 yellowDiv.addEventListener('click', turnToYellow)
 whiteDiv.addEventListener('click', turnToWhite)
 
+
+let canvas = document.querySelectorAll('.canvas div')
+
+
+for(const square of canvas){
+  let erase = function(){
+    square.classList.remove('color-1')
+    square.classList.remove('color-2')
+    square.classList.remove('color-3')
+    square.classList.remove('color-4')
+    square.classList.remove('color-5')
+
+    let newColor = currentBrush.classList[1]
+    square.classList.add(newColor)
+  }
+
+  square.addEventListener('click', erase)
+}
