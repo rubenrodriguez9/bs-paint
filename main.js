@@ -26,12 +26,31 @@ while (count <= gridWidth * gridWidth) {
 }
 
 
+
+
 /***********
  * QUERIES *
 ***********/
 
 // Add queries for all your squares, palette colors, and brush here.
 // (Note the singular or plural used in that sentence!)
+
+/* renaming each div to color*/
+const palette = document.querySelectorAll('div');
+const lightBlueDiv = palette[0];
+const orangeDiv = palette[1];
+const ligtGreenDiv = palette[2];
+const yellowDiv = palette[3];
+const whiteDiv = palette[4];
+
+const currentBrush = document.querySelector('.current-brush')
+
+
+
+
+
+
+
 
 
 
@@ -45,6 +64,34 @@ while (count <= gridWidth * gridWidth) {
 // run as event listeners (after the next step is set up) isn't a
 // bad idea for testing purposes.
 
+const removeColors = function(){
+  currentBrush.classList.remove('color-1') 
+  currentBrush.classList.remove('color-2')
+  currentBrush.classList.remove('color-3')
+  currentBrush.classList.remove('color-4')
+  currentBrush.classList.remove('color-5')
+}
+const turnToBlue = function(){
+  removeColors()
+  currentBrush.classList.add('color-1')
+}
+const turnToOrange = function(){
+  removeColors()
+  currentBrush.classList.add('color-2')
+}
+const turnToGreen = function(){
+  removeColors()
+  currentBrush.classList.add('color-3')
+}
+const turnToYellow = function(){
+  removeColors()
+  currentBrush.classList.add('color-4')
+}
+const turnToWhite = function(){
+  removeColors()
+  currentBrush.classList.add('color-5')
+}
+
 
 
 /**************************
@@ -55,3 +102,10 @@ while (count <= gridWidth * gridWidth) {
 // You'll need to add the appropriate event listener for each
 // square and for each palette color from the functions you
 // wrote above.
+
+lightBlueDiv.addEventListener('click', turnToBlue)
+orangeDiv.addEventListener('click', turnToOrange)
+ligtGreenDiv.addEventListener('click', turnToGreen)
+yellowDiv.addEventListener('click', turnToYellow)
+whiteDiv.addEventListener('click', turnToWhite)
+
